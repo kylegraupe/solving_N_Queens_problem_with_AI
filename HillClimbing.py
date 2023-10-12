@@ -4,9 +4,9 @@ from random import randint
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-N = int(config['BoardConfig']['N8'])
-N16 = int(config['BoardConfig']['N16'])
-N32 = int(config['BoardConfig']['N32'])
+# N = int(config['BoardConfig']['N8'])
+# N = int(config['BoardConfig']['N16'])
+N = int(config['BoardConfig']['N32'])
 iterations = int(config['BoardConfig']['iterations'])
 
 
@@ -223,20 +223,18 @@ def execute_hill_climbing():
     Execute the hill climbing algorithm to find a solution for the N-Queens problem.
     """
     directory = r'/Users/kylegraupe/Documents/Programming/GitHub/N_Queen'
-    file_path = directory + f'NQueenOutputHillClimbingN{N}.txt'
 
-    with open(file_path, 'w') as file:
-        for i in range(iterations):
+    for i in range(iterations):
 
-            print(f'======== Iteration: {i} ========')
-            state = [0] * N
-            board = [[0 for _ in range(N)] for _ in range(N)]
+        print(f'======== Iteration: {i} ========')
+        state = [0] * N
+        board = [[0 for _ in range(N)] for _ in range(N)]
 
-            # Generate a random starting point by
-            # randomly configuring the board
-            random_board_config(board, state, N)
+        # Generate a random starting point by
+        # randomly configuring the board
+        random_board_config(board, state, N)
 
-            # Perform hill climbing on the
-            # obtained board configuration
-            print(hill_climbing(board, state), file=file)
+        # Perform hill climbing on the
+        # obtained board configuration
+        hill_climbing(board, state)
 
