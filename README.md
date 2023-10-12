@@ -1,74 +1,48 @@
-# Hill Climbing Algorithm for the N-Queens Problem
+Certainly, here's a short README.md file for your application:
 
-This repository contains a Python implementation of the Hill Climbing algorithm to solve the N-Queens problem. The N-Queens problem is a classic combinatorial optimization problem that involves placing N chess queens on an N×N chessboard so that no two queens threaten each other. Thus, a solution requires that no two queens share the same row, column, or diagonal.
 
-The Hill Climbing algorithm is a local search algorithm that starts with a random initial solution and iteratively makes small changes to the current solution to optimize a given objective function. In this case, the objective is to minimize the number of pairwise attacks between queens.
+# N-Queens Solver
 
-## Contents
+This application provides two different algorithms for solving the N-Queens problem with varying board sizes (N = 8, N = 16, or N = 32) and a fixed number of iterations (100). You can choose to use either the Genetic Algorithm or the Hill Climbing Algorithm to find a solution to the N-Queens puzzle.
 
-- [Algorithm Overview](#algorithm-overview)
-- [Usage](#usage)
-- [Algorithm Details](#algorithm-details)
-- [License](#license)
+## Getting Started
 
-## Algorithm Overview
+To run the N-Queens solver, follow these steps:
 
-The Hill Climbing algorithm implemented in this repository follows these key steps:
+1. Clone this repository to your local machine. git clone <repository-link>
 
-1. **Random Initialization:** It starts with a random initial solution. The chessboard is randomly configured with queens, and the objective function is computed.
 
-2. **Local Search:** The algorithm iteratively explores neighboring solutions. It selects a neighboring state that improves the objective function and moves to that state. This process is repeated until it reaches a local optimum where no better neighbor can be found.
+2. Ensure you have Python installed on your system.
 
-3. **Random Restart:** If the algorithm gets stuck in a local optimum, it can escape by performing a random restart. It generates a new random initial solution and repeats the local search.
+3. Configure the board size and other parameters by modifying the 'config.ini' file. Uncomment the line associated with the desired board size (N = 8, N = 16, or N = 32).
 
-4. **Termination:** The algorithm terminates when either it finds a solution with zero attacks (i.e., a valid N-Queens solution) or reaches a predefined number of iterations.
+4. Run the application to choose between the Genetic Algorithm and Hill Climbing Algorithm for solving the N-Queens problem:
 
-## Usage
+```bash
+python main.py
+```
 
-To use the Hill Climbing algorithm to solve the N-Queens problem, follow these steps:
+5. The chosen algorithm will attempt to find a solution for the specified board size and display the result, including the final chessboard configuration with queens placed to avoid attacks.
 
-1. Ensure you have Python 3.x installed on your system.
+## Algorithms
 
-2. Clone or download this repository to your local machine.
+### Genetic Algorithm
 
-3. Install the required dependencies if not already installed. You can do this using pip:
+The Genetic Algorithm uses a population of randomly generated solutions to evolve and find the optimal solution by selecting the fittest individuals, performing crossover (reproduction), and applying mutation.
 
-   ```bash
-   pip install configparser
-   ```
+### Hill Climbing Algorithm
 
-4. Run the `hill_climbing_nqueens.py` script using the following command:
+The Hill Climbing Algorithm starts with a random board configuration and iteratively improves the solution by making small changes to minimize the number of queen attacks.
 
-   ```bash
-   python hill_climbing_nqueens.py
-   ```
+## Contributors
 
-5. The algorithm will execute and display the final N-Queens solution on the console.
+- [Your Name](https://github.com/your-github-username)
 
-## Algorithm Details
-
-- **`random_board_config(board, state, N_)`:** This function randomly configures the chessboard with queens. It assigns random positions for queens on the board and updates the state.
-
-- **`print_board(board, N_)`:** This function prints the current configuration of the chessboard, showing the positions of the queens.
-
-- **`print_state(state)`:** Prints the current state, which represents the positions of queens.
-
-- **`compare_states(state_1, state_2, N_)`:** Compares two states to check if they are equal, which is useful for determining if a local optimum has been reached.
-
-- **`fill(board, value, N_)`:** Fills the chessboard with a specified value, where 1 represents the presence of a queen, and 0 represents an empty square.
-
-- **`objective(board, state, N_)`:** Computes the number of pairwise attacks in the current state. The objective is to minimize this value.
-
-- **`generate_board(board, state)`:** Generates a chessboard configuration based on the queen positions.
-
-- **`copy_state(state1, state2)`:** Copies the values from one state to another.
-
-- **`get_neighbour(board, state)`:** Finds the optimal neighbor by considering neighboring states and their objectives.
-
-- **`hill_climbing(board, state, N_)`:** The main Hill Climbing algorithm, which iteratively searches for a solution by exploring neighboring states.
-
-- **`execute_hill_climbing()`:** The entry point of the script. It initializes the algorithm and starts the hill climbing process.
+Feel free to contribute to this project by improving the algorithms, adding new features, or fixing bugs.
 
 ## License
 
-This implementation of the Hill Climbing algorithm for the N-Queens problem is provided under the [MIT License](LICENSE). You are free to use and modify the code as needed.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```
+
+Make sure to replace `<repository-link>` with the actual link to your repository. You can also add contributors and update the license information as needed.
