@@ -1,6 +1,3 @@
-Certainly, here's a short README.md file for your application:
-
-
 # N-Queens Solver
 
 This application provides two different algorithms for solving the N-Queens problem with varying board sizes (N = 8, N = 16, or N = 32) and a fixed number of iterations (100). You can choose to use either the Genetic Algorithm or the Hill Climbing Algorithm to find a solution to the N-Queens puzzle.
@@ -9,7 +6,7 @@ This application provides two different algorithms for solving the N-Queens prob
 
 To run the N-Queens solver, follow these steps:
 
-1. Clone this repository to your local machine. git clone <repository-link>
+1. Clone this repository to your local machine. git clone <https://github.com/kylegraupe/N_Queen>
 
 
 2. Ensure you have Python installed on your system.
@@ -36,13 +33,10 @@ The Hill Climbing Algorithm starts with a random board configuration and iterati
 
 ## Contributors
 
-- [Your Name](https://github.com/your-github-username)
+- [Kyle Graupe](https://github.com/kylegraupe/N_Queen)
 
 Feel free to contribute to this project by improving the algorithms, adding new features, or fixing bugs.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-Make sure to replace `<repository-link>` with the actual link to your repository. You can also add contributors and update the license information as needed.

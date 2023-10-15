@@ -152,19 +152,17 @@ def execute_genetic_algo():
         generation = 1
 
         while not objective_max in [objective_function(chrom, objective_max) for chrom in population]:
-            print(f"========= Generation {generation} =========")
             population = genetic_queen(population, objective_function, objective_max)
-
-            print(f"Max Objective Value = {max([objective_function(n, objective_max) for n in population])}")
             generation += 1
 
         chrom_out = []
         print(f"Solved in Generation {generation - 1}!")
+        solution_count = solution_count + 1
+
         for chrom in population:
             if objective_function(chrom, objective_max) == objective_max:
 
                 print("Solution to N Queens: ")
-                solution_count += 1
                 chrom_out = chrom
                 print_chromosome(chrom, objective_max)
 

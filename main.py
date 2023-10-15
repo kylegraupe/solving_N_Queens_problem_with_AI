@@ -10,4 +10,4 @@ def execute_search(version):
 
 
 if __name__ == '__main__':
-    execute_search(2)
+    execute_search(2)  # 1 for hill climbing, 2 for genetic algo

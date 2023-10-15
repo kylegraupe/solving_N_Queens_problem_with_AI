@@ -1,12 +1,13 @@
 import configparser
 from random import randint
+import pandas as pd
 
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-# N = int(config['BoardConfig']['N8'])
+N = int(config['BoardConfig']['N8'])
 # N = int(config['BoardConfig']['N16'])
-N = int(config['BoardConfig']['N32'])
+# N = int(config['BoardConfig']['N32'])
 iterations = int(config['BoardConfig']['iterations'])
 
 
@@ -21,6 +22,9 @@ def random_board_config(board, state, n_):
     for i in range(n_):
         state[i] = randint(0, 100000) % n_
         board[state[i]][i] = 1
+
+    print(f'Initial State:')
+    print(pd.DataFrame(board))
 
 
 def print_board(board, n_):
@@ -224,7 +228,7 @@ def execute_hill_climbing():
     """
     directory = r'/Users/kylegraupe/Documents/Programming/GitHub/N_Queen'
 
-    for i in range(iterations):
+    for i in range(10):
 
         print(f'======== Iteration: {i} ========')
         state = [0] * N
